@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test';
+
+import { test, expect } from '../base/BaseTest';
 import { LoginPage } from '../pages/LoginPage';
 import { InventoryPage } from '../pages/InventoryPage';
 import { credentials } from '../config/testData';
