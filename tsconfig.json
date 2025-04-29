@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "rootDir": "src",
+    "resolveJsonModule": true,
+    "types": ["node", "playwright", "playwright/test"]
+  },
+  "include": ["src"]
+}
