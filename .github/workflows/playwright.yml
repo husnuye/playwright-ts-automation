@@ -14,23 +14,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright Tests
+      - name: Run Playwright tests
         run: npx playwright test
 
-      - name: Upload Playwright HTML report
+      - name: Upload test report
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: playwright-html-report
-          path: playwright-report/
+          name: playwright-report
+          path: playwright-report
