@@ -26,6 +26,7 @@ jobs:
 
       - name: Run Playwright tests (headless mode)
         run: xvfb-run --auto-servernum -- npx playwright test
+<<<<<<< HEAD
 
       - name: Install Allure Commandline
         run: npm install -g allure-commandline --save-dev
@@ -39,3 +40,5 @@ jobs:
         with:
           name: allure-report
           path: ./allure-report
+=======
+>>>>>>> 063528691af63a7eb252051b5ee547cf166b8256
