@@ -8,5 +8,8 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },
-  reporter: [['html', { outputFolder: 'playwright-report' }]],
+  reporter: [
+    ['html', { outputFolder: 'playwright-report', open: 'never' }],
+    ['allure-playwright'],
+  ],
 });
