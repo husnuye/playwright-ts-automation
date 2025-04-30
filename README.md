@@ -27,10 +27,16 @@ npm install
 npx playwright install --with-deps
 npx playwright test
 
+
+📊 **Live Test Report (Allure)**  
+👉 [View Latest Allure Report](https://husnuye.github.io/playwright-ts-automation/index.html)  
+*(Test results are updated automatically after each push to `main`.)*
+
 To open the default HTML report:
 
 npx playwright show-report
 
+To generate and open Allure report:
 
 npx allure generate ./allure-results --clean -o ./allure-report
 npx allure open ./allure-report
