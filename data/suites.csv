@@ -1,3 +1,5 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","3136","User should be able to login successfully","","Wed Apr 30 20:27:07 GMT+03:00 2025","passed","Wed Apr 30 20:27:10 GMT+03:00 2025","","login.spec.ts","",""
-"","3344","User can login, add product to cart, and verify cart","","Wed Apr 30 20:27:07 GMT+03:00 2025","passed","Wed Apr 30 20:27:11 GMT+03:00 2025","","inventory.spec.ts","",""
+"","591","should show error for locked out user","","Fri May 02 19:10:03 UTC 2025","passed","Fri May 02 19:10:04 UTC 2025","Login Tests","login.spec.ts","",""
+"","601","should show error with invalid credentials","","Fri May 02 19:10:03 UTC 2025","passed","Fri May 02 19:10:04 UTC 2025","Login Tests","login.spec.ts","",""
+"","870","should login successfully with valid credentials","","Fri May 02 19:10:02 UTC 2025","passed","Fri May 02 19:10:03 UTC 2025","Login Tests","login.spec.ts","",""
+"","953","User can login, add a product to the cart, and verify it appears in the cart","","Fri May 02 19:10:02 UTC 2025","passed","Fri May 02 19:10:03 UTC 2025","Inventory Cart Flow","inventory.spec.ts","",""
