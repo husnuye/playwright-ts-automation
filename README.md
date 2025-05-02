@@ -1,58 +1,60 @@
+/*
+# Playwright Automation Framework (TypeScript)
 
-# Playwright TypeScript Automation Framework
+This repository demonstrates a structured and scalable end-to-end (E2E) test automation framework built with [Playwright](https://playwright.dev/) and TypeScript. The framework follows industry-standard practices such as modular page objects, clean test separation, reusable assertions, and CI/CD integration.
 
-This repository contains an end-to-end (E2E) test automation framework built with [Playwright](https://playwright.dev/) and TypeScript.
+## Framework Highlights
+- Built on Playwright’s native test runner with full TypeScript support
+- Clear page object model with shared base class functionality
+- Clean test data separation via `credentials.ts`
+- HTML and Allure reporting enabled for both local and CI usage
+- GitHub Actions pipeline configured to execute tests and publish reports
 
-## 🚀 Features
+## Project Structure
+```
+project-root/
+├── pages/                   # Page object classes
+├── config/                  # Static test data (e.g., credentials)
+├── tests/                   # Spec files
+├── playwright.config.ts     # Playwright settings
+├── .github/workflows/       # GitHub Actions CI configuration
+├── package.json             # Dependencies and scripts
+└── README.md                # Project overview
+```
 
-- ✅ Headless/Headed browser execution
-- ✅ Page Object Model (POM) structure
-- ✅ Test data separation
-- ✅ GitHub Actions CI integration
-- ✅ Allure test reporting
-- ✅ Live Allure report hosted via GitHub Pages
+## How to Execute Tests Locally
 
-## 📂 Project Structure
-├── src/
-│   ├── pages/           → Page classes
-│   ├── tests/           → Test scenarios
-│   └── testData.ts      → Static test data
-├── playwright.config.ts → Test runner configuration
-└── .github/workflows/   → GitHub Actions CI pipeline
-
-## 🧪 Run Tests Locally
-
+Install dependencies:
 ```bash
 npm install
 npx playwright install --with-deps
+```
+
+Run all tests:
+```bash
 npx playwright test
+```
 
-
-📊 **Live Test Report (Allure)**  
-👉 [View Latest Allure Report](https://husnuye.github.io/playwright-ts-automation/index.html)  
-*(Test results are updated automatically after each push to `main`.)*
-
-To open the default HTML report:
-
+View the HTML report:
+```bash
 npx playwright show-report
+```
 
-To generate and open Allure report:
-
+Generate and view the Allure report:
+```bash
 npx allure generate ./allure-results --clean -o ./allure-report
 npx allure open ./allure-report
+```
 
-📊 Live Test Report (Allure)
+## CI/CD Process
+The framework is integrated with GitHub Actions to:
+- Run tests on every push to `main`
+- Collect trace, video, and screenshot artifacts
+- Generate Allure reports automatically
+- Publish live reports to GitHub Pages
 
-👉 View Latest Allure Report
-(Test results are updated automatically after each push to main.)
+**Live Report Access:** [https://husnuye.github.io/playwright-ts-automation/](https://husnuye.github.io/playwright-ts-automation/)
 
-🔁 CI/CD
-
-This project uses GitHub Actions to:
-	•	Run tests on push
-	•	Generate Allure reports
-	•	Publish reports to GitHub Pages
-
-📄 License
-
-This project is open source and available under the MIT License.
+## License
+This project is available under the MIT License.
+*/

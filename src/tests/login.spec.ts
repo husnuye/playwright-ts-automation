@@ -1,13 +1,32 @@
+// src/tests/login.spec.ts
 
-import { test, expect } from '../base/BaseTest';
+import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
+import { credentials } from '../config/credentials';
 
-test('User should be able to login successfully', async ({ page }) => {
-  const loginPage = new LoginPage(page);
+test.describe('Login Tests', () => {
+  let loginPage: LoginPage;
 
-  await loginPage.gotoLoginPage();
-  await loginPage.login('standard_user', 'secret_sauce');
-  await loginPage.assertLoginSuccess();
+  test.beforeEach(async ({ page }) => {
+    loginPage = new LoginPage(page);
+    await loginPage.gotoLoginPage(); // ✅ BasePage ile sadeleştirilmiş kullanım
+  });
 
-  await expect(page).toHaveURL(/inventory/); // Başarılı login sonrası bu sayfaya gider
+  test('should login successfully with valid credentials', async ({ page }) => {
+    const { username, password } = credentials.validUser;
+    await loginPage.login(username, password);
+    await expect(page).toHaveURL(/inventory/); // ✅ Başarılı yönlendirme kontrolü
+  });
+
+  test('should show error with invalid credentials', async () => {
+    const { username, password } = credentials.invalidUser;
+    await loginPage.login(username, password);
+    await loginPage.assertLoginError('Epic sadface: Username and password do not match any user in this service');
+  });
+
+  test('should show error for locked out user', async () => {
+    const { username, password } = credentials.lockedOutUser;
+    await loginPage.login(username, password);
+    await loginPage.assertLoginError('Epic sadface: Sorry, this user has been locked out.');
+  });
 });
