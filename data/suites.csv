@@ -1,3 +1,3 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","945","User can login, add product to cart, and verify cart","","Thu May 01 12:08:24 UTC 2025","passed","Thu May 01 12:08:25 UTC 2025","","inventory.spec.ts","",""
-"","866","User should be able to login successfully","","Thu May 01 12:08:24 UTC 2025","passed","Thu May 01 12:08:25 UTC 2025","","login.spec.ts","",""
+"","3136","User should be able to login successfully","","Wed Apr 30 20:27:07 GMT+03:00 2025","passed","Wed Apr 30 20:27:10 GMT+03:00 2025","","login.spec.ts","",""
+"","3344","User can login, add product to cart, and verify cart","","Wed Apr 30 20:27:07 GMT+03:00 2025","passed","Wed Apr 30 20:27:11 GMT+03:00 2025","","inventory.spec.ts","",""
