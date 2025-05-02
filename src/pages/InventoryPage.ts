@@ -14,7 +14,7 @@ export class InventoryPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.firstAddToCartButton = page.locator('.inventory_item button');
+    this.firstAddToCartButton = page.locator('.inventory_item').first().locator('button');
     this.shoppingCartLink = page.locator('.shopping_cart_link');
     this.cartItem = page.locator('.cart_item');
     this.cartBadge = page.locator('.shopping_cart_badge');
