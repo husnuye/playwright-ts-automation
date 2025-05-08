@@ -1,25 +1,34 @@
 /*
 # Playwright Automation Framework (TypeScript)
 
-This repository demonstrates a structured and scalable end-to-end (E2E) test automation framework built with [Playwright](https://playwright.dev/) and TypeScript. The framework follows industry-standard practices such as modular page objects, clean test separation, reusable assertions, and CI/CD integration.
+This repository demonstrates a structured and scalable end-to-end (E2E) test automation framework built with **Playwright** and **TypeScript**.
+
+The framework follows industry-standard practices such as:
+- Modular **Page Object Model (POM)**
+- Clean separation of **test logic** and **test data**
+- Reusable components and assertions
+- Built-in support for **Docker** and **CI/CD pipelines**
 
 ## Framework Highlights
-- Built on Playwright’s native test runner with full TypeScript support
-- Clear page object model with shared base class functionality
-- Clean test data separation via `credentials.ts`
-- HTML and Allure reporting enabled for both local and CI usage
-- GitHub Actions pipeline configured to execute tests and publish reports
+
+-  Built on [Playwright](https://playwright.dev/) with full **TypeScript** support  
+-  Clean, modular **Page Object Model** (`pages/`)  
+-  Secure and reusable **test credentials** (`config/`)  
+-  HTML + Allure **reporting** support (local & CI)
+-  GitHub Actions pipeline for automatic test execution and reporting  
+-  Docker support for consistent environment execution
 
 ## Project Structure
-```
+
 project-root/
 ├── pages/                   # Page object classes
 ├── config/                  # Static test data (e.g., credentials)
-├── tests/                   # Spec files
+├── tests/                   # Spec files (test cases)
 ├── playwright.config.ts     # Playwright settings
 ├── .github/workflows/       # GitHub Actions CI configuration
+├── Dockerfile               # Docker setup to run tests in container
 ├── package.json             # Dependencies and scripts
-└── README.md                # Project overview
+└── README.md                # Project overview (this file)```
 ```
 
 ## How to Execute Tests Locally
