@@ -20,19 +20,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
+      - name: Build Docker Image
+        run: docker build -t playwright-test .
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-
-      - name: Run Playwright Tests (headless mode)
-        run: xvfb-run --auto-servernum -- npx playwright test
+      - name: Run Playwright Tests inside Docker
+        run: docker run --rm -v ${{ github.workspace }}/allure-report:/app/allure-report -v ${{ github.workspace }}/allure-results:/app/allure-results playwright-test
 
       - name: Install Allure Commandline
         run: npm install -g allure-commandline
@@ -52,4 +44,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
-          publish_branch: gh-pages
